@@ -12,7 +12,6 @@ If you haven't already, fork this repository and clone it on your computer.
 - Play using your favourite tool (notebook, terminal, scripts) with the functions and objects used in `times.py`.
 
 ## Step 2: Writing a unit test
-
 - Create a new file called `test_times.py` in the same directory where `times.py` is.
 - Make the `overlap_time` function accessible to that file. (*Hint*: You need to `import` the file).
 - Move the content from the `if __name__ ...` block from `times.py` to a function called `test_given_input` into `test_times.py`
