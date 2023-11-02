@@ -55,7 +55,7 @@ test_time_wrong_types()
 
 def test_time_wrong_order():
     test_range1 = "2010-01-12 10:00:00", "2010-01-12 08:00:00"
-    with raises(Exception) as exception: 
+    with raises(ValueError) as exception: 
         time_range(test_range1)
 
 test_time_wrong_order()
