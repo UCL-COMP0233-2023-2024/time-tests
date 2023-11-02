@@ -1,4 +1,5 @@
 from times import compute_overlap_time, time_range
+from pytest import raises
 
 # Positive test
 def test_given_input():
@@ -31,3 +32,10 @@ def test_time_ranges_touch():
     result = compute_overlap_time(large, short)
     expected = ['2010-01-12 12:00:00']
     assert result == expected
+
+# test for time_range where end_time is smaller than start_time
+# with raises(ValueError):
+
+
+# def test_time_ranges_touch():
+#      assert time_range("2010-01-12 12:00:00", "2010-01-12 10:00:00") == ValueError("end_time must be greater than start_time")
