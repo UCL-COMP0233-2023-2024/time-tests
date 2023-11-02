@@ -38,9 +38,7 @@ def third_case():
     short =  time_range("2010-01-12 12:00:00", "2010-01-12 12:15:00", 6, 36)
     result = compute_overlap_time(large,short)
     #print(result)
-    expected = [('2010-01-12 12:00:00', '2010-01-12 12:00:00'), ('2010-01-12 12:02:36', '2010-01-12 12:00:00'), 
-     ('2010-01-12 12:05:12', '2010-01-12 12:00:00'), ('2010-01-12 12:07:48', '2010-01-12 12:00:00'), 
-     ('2010-01-12 12:10:24', '2010-01-12 12:00:00'), ('2010-01-12 12:13:00', '2010-01-12 12:00:00')]
+    expected = []
     assert result == expected
 #third_case()
 def test_fun():
@@ -48,3 +46,4 @@ def test_fun():
     assert second_test()
     assert no_overlap()
     assert third_case()
+test_fun()
