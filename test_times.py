@@ -41,6 +41,12 @@ def test_time_wrong_dates():
 
 test_time_wrong_dates()
 
+def test_time_wrong_types():
+    with raises(Exception) as exception: 
+        time_range(1.0, 5)
+
+
+test_time_wrong_types()
 
 class ConstructorTestCase(unittest.TestCase):
     def test_time_wrong_dates(self):
