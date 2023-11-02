@@ -9,7 +9,7 @@ def test_given_result():
     expected = [('2010-01-12 10:30:00', '2010-01-12 10:32:00'), ('2010-01-12 10:32:36', '2010-01-12 10:34:36'), 
                 ('2010-01-12 10:35:12', '2010-01-12 10:37:12'), ('2010-01-12 10:37:48', '2010-01-12 10:39:48'), 
                 ('2010-01-12 10:40:24', '2010-01-12 10:42:24'), ('2010-01-12 10:43:00', '2010-01-12 10:45:00')]
-    assert result == expected
+    return result == expected
 
 def second_test():
     # two time ranges that both contain several intervals each
@@ -41,7 +41,7 @@ def third_case():
     result = compute_overlap_time(large,short)
     #print(result)
     expected = []
-    assert result == expected
+    return result == expected
 #third_case()
 def test_fun():
     assert test_given_result()
