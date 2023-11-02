@@ -45,9 +45,9 @@ def third_case():
 
 def neg_test():
     expected_error = "start_time must be less than or equal to end_time"
-    with pytest.raises(ValueError, match = expected_error):
+    with pytest.raises(ValueError, match = expected_error) as erroif:
         time_range("2010-01-12 14:00:00", "2010-01-12 12:00:00")
-    #assert str(erroif.value) == "start_time must be less than or equal to end_time"
+    assert str(erroif.value) == "start_time must be less than or equal to end_time"
 #print(neg_test())
 #third_case()
 def test_fun():
