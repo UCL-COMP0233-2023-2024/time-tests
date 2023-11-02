@@ -9,7 +9,7 @@ def test_given_result():
     expected = [('2010-01-12 10:30:00', '2010-01-12 10:32:00'), ('2010-01-12 10:32:36', '2010-01-12 10:34:36'), 
                 ('2010-01-12 10:35:12', '2010-01-12 10:37:12'), ('2010-01-12 10:37:48', '2010-01-12 10:39:48'), 
                 ('2010-01-12 10:40:24', '2010-01-12 10:42:24'), ('2010-01-12 10:43:00', '2010-01-12 10:45:00')]
-    assert result == expected
+    return result == expected
 
 def second_test():
     # two time ranges that both contain several intervals each
@@ -44,10 +44,11 @@ def third_case():
     return result == expected
 
 def neg_test():
-    with pytest.raises(ValueError) as erroif:
-        large = time_range("2010-01-12 14:00:00", "2010-01-12 12:00:00")
-    return str(erroif.value) == "start_time must be less than or equal to end_time"
-
+    expected_error = "start_time must be less than or equal to end_time"
+    with pytest.raises(ValueError, match = expected_error):
+        time_range("2010-01-12 14:00:00", "2010-01-12 12:00:00")
+    #assert str(erroif.value) == "start_time must be less than or equal to end_time"
+#print(neg_test())
 #third_case()
 def test_fun():
     assert second_test()
