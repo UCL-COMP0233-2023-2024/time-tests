@@ -25,8 +25,9 @@ def second_test():
 def no_overlap():
     large = time_range("2010-01-12 10:00:00", "2010-01-12 12:00:00")
     short =  time_range("2010-01-12 12:30:00", "2010-01-12 12:45:00")
-    result = compute_overlap_time(large,short)
-    expected = []
+    with pytest.raises(ValueError) as erroin:
+            result = compute_overlap_time(large,short)
+
     return result == expected
 
 #large = time_range("2010-01-12 10:00:00", "2010-01-12 11:00:00")
