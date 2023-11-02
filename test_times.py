@@ -46,7 +46,26 @@ def test_time_wrong_types():
         time_range(1.0, 5)
 
 
+def test_time_wrong_types():
+    with raises(Exception) as exception: 
+        time_range(1.0, 5)
+
+
 test_time_wrong_types()
+
+def test_time_wrong_order():
+    test_range1 = "2010-01-12 10:00:00", "2010-01-12 08:00:00"
+    with raises(Exception) as exception: 
+        time_range(test_range1)
+
+test_time_wrong_order()
+
+#def compute_overlap_wrong_order():
+#    test_range1 = "2010-01-12 10:00:00", "2010-01-12 12:00:00"
+#    test_range2 = "2010-01-12 10:30:00", "2010-01-12 10:45:00"
+#    with raises(ValueError) as exception: 
+#        compute_overlap_time(time_range([-1, 2, 3])
+
 
 class ConstructorTestCase(unittest.TestCase):
     def test_time_wrong_dates(self):
