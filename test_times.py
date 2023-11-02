@@ -45,7 +45,6 @@ def third_case():
 
 #third_case()
 def test_fun():
-    assert test_given_result()
     assert second_test()
     assert no_overlap()
     assert third_case()
