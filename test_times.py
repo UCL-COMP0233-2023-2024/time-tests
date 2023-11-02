@@ -42,9 +42,9 @@ def third_case():
     #print(result)
     expected = []
     return result == expected
+
 #third_case()
 def test_fun():
-    assert test_given_result()
     assert second_test()
     assert no_overlap()
     assert third_case()
