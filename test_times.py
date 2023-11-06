@@ -1,5 +1,5 @@
 from times import time_range, compute_overlap_time
-import datetime
+import pytest
 
 def test_given_input():
     if __name__ == "__main__":
@@ -31,6 +31,13 @@ def test_time_ranges_touch():
     result = compute_overlap_time(large, short)
     expected = ['2010-01-12 12:00:00']
     assert result == expected
+
+def test_negative_time_range():
+    # first possible solution
+    with pytest.raises(ValueError) as e:
+        time_range("2010-01-12 10:00:00", "2010-01-12 09:30:00")
+    # lines after the error is raised are not executed in the pytest.raises context, so the assertion has to be outside the "with"    
+    assert e.match('The end of the time range has to come strictly after its start.')
 
 
         
