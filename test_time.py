@@ -1,5 +1,12 @@
-import times
+from times import time_range, compute_overlap_time
 import pytest
+import yaml
+
+with open("fixture.yaml", 'r') as yamlfile:
+    fixture = yaml.safe_load(yamlfile)
+    print(fixture)
+    
+@pytest.mark.parametrize("test_name", fixture)
 
 def test_given_input():
     range1 = times.time_range("2010-01-12 10:00:00", "2010-01-12 12:00:00")
@@ -62,3 +69,4 @@ def test_correct_input():
 
     with pytest.raises(ValueError):
         time_range("2023-01-01 09:00:00", "2023-01-01 08:00:00") 
+
