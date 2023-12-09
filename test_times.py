@@ -1,4 +1,5 @@
 from times import compute_overlap_time, time_range
+import pytest
 
 def test_generic_case():
     large = time_range("2010-01-12 10:00:00", "2010-01-12 12:00:00")
