@@ -24,4 +24,8 @@ def test_touching_edges():
     expected = []
     assert compute_overlap_time(before, after) == expected
 
-    
+def test_negative_time_range_alternative():
+    # an alternative solution for using pytest.raises to check that the error message is as expected
+    expected_error_message = 'The end of the time range has to come strictly after its start.'
+    with pytest.raises(ValueError, match=expected_error_message):
+        time_range("2010-01-12 10:00:00", "2010-01-12 09:30:00")
